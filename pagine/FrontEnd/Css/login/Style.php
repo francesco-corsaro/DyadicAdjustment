@@ -8,24 +8,30 @@
   box-sizing: border-box;
 }
 <?php include 'griglia_css.php';?>
-
-/*impostazioni body rgba(71,249,130,0.34);*/
-
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 body{
     background-image:linear-gradient(171deg, rgba(157,212,196,1) 24%, rgba(164,149,196,1) 100%);
    
     font-family: 'Quicksand', sans-serif;
     } 
+    
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+
+
+/*impostazioni body rgba(71,249,130,0.34);*/
+
+
+
+
+
 h1{
     font-family: 'NTR', sans-serif;
-    font-size:12vw;
+    font-size:12.5vw;
     color:#A195C7
     }
   @media only screen and (min-width: 760px) {
