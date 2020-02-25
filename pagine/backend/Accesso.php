@@ -6,9 +6,9 @@ test_input_email($_POST[email]);
 pwd_match($_POST[pwd]);
 
 
-require 'DataBase/ConnectDataBase.php';//serve a connettersi al database
+require 'DataBase/ConnectDataBase.php'; //serve a connettersi al database
 
-$sql = "SELECT Email, Password, Id, Nome, Cognome, Foto FROM Anagrafica";
+$sql = "SELECT Email, Password, Id, Nome, Cognome FROM Anagrafica";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -23,9 +23,9 @@ if ($result->num_rows > 0) {
             $_SESSION['nome']=$row["Nome"];
             $conn->close();
             
-            /* var_dump($row);*/
+           // var_dump($row);
             $meccanico="<br>Login effettuato<br>";
-            header("location:/pagine/Utente.php");
+            require 'backend/DataBase/VerificaId.php';
         }else{
             $_SESSION['denied']=1;
             
