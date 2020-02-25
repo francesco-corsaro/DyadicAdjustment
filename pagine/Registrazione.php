@@ -65,16 +65,18 @@ if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 &&
             					<input name="cognome" type="TEXT" placeholder="Cognome" required>
 									
                 		<?php echo $pwdErr;?>
+                		
                 					<div class="occhio">
+                				       
                 					  <img  id="myImage" onclick="myFunction1()" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1NTEuMTIyIDU1MS4xMjIiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDU1MS4xMjIgNTUxLjEyMiIgd2lkdGg9IjI0cHgiPjxwYXRoIGQ9Im0yNzUuNTYxIDY4Ljg4N2MtMzguNjkgMC03NS43NiA4Ljc2OS0xMTAuMTc0IDIzLjQzN2wyNi4yMzYgMjYuMjM2YzI2LjU4NS05LjYzMSA1NC43NjgtMTUuMjI4IDgzLjkzOC0xNS4yMjggMTA2LjUzMiAwIDIwMi4yODQgNjguOTc1IDI0MC4wNzcgMTcyLjIyOC0xNC40MDEgMzkuMzQ4LTM3LjMwNSA3My42MTEtNjUuOTMxIDEwMS4wODNsMjQuMjIyIDI0LjIyMmMzMy42MTUtMzIuNDEgNjAuMjg2LTcyLjk1NyA3Ni4yNzMtMTE5LjczOCAxLjIyOC0zLjYxNiAxLjIyOC03LjUxOCAwLTExLjEzNC00MS4xMDctMTIwLjI5LTE1MS40NzUtMjAxLjEwNi0yNzQuNjQxLTIwMS4xMDZ6IiBmaWxsPSIjMDAwMDAwIi8+PHBhdGggZD0ibTM0My45ODMgMjcwLjkyMSAzMS4wNjMgMzEuMDYzYzIuMjYtOC40ODUgMy44NTItMTcuMjMzIDMuODUyLTI2LjQyMyAwLTU2Ljk4My00Ni4zNTMtMTAzLjMzNy0xMDMuMzM3LTEwMy4zMzctOS4xOSAwLTE3LjkzOCAxLjU5Mi0yNi40MjMgMy44NTJsMzEuMDYzIDMxLjA2M2MzNC4yMzUgMi4zMjkgNjEuNDUzIDI5LjU0NyA2My43ODIgNjMuNzgyeiIgZmlsbD0iIzAwMDAwMCIvPjxwYXRoIGQ9Im0zNC40NDEgNTguNzk2IDY5LjgzNyA2OS44MzdjLTQ2LjI1MyAzNC45OC04My4zODUgODIuOTE0LTEwMy4zNTggMTQxLjM2MS0xLjIyOCAzLjYxNi0xLjIyOCA3LjUxOCAwIDExLjEzNCA0MS4xMDYgMTIwLjI5MSAxNTEuNDczIDIwMS4xMDcgMjc0LjY0IDIwMS4xMDcgNTEuMiAwIDk5LjU1Ny0xNS4wNDUgMTQyLjIxNi00MC4xMDNsNzQuNTQ5IDc0LjU0OSAyNC4zNTQtMjQuMzU0LTQ1Ny44ODUtNDU3Ljg4Ni0yNC4zNTQgMjQuMzU0em0yNDEuMTIgMzg4Ljk5NGMtMTA2LjUzMiAwLTIwMi4yODQtNjguOTc1LTI0MC4wNzctMTcyLjIyOCAxOC42NC01MC45MzEgNTIuMTM3LTkyLjM1OCA5My4zNzgtMTIyLjM0NWw2Mi42NDkgNjIuNjQ5Yy0xMi4wNCAxNi44OTctMTkuMjg3IDM3LjQxNC0xOS4yODcgNTkuNjk1IDAgNTYuOTgzIDQ2LjM1MyAxMDMuMzM3IDEwMy4zMzcgMTAzLjMzNyAyMi4yODEgMCA0Mi43OTgtNy4yNDcgNTkuNjk1LTE5LjI4N2w1Ny4zMTUgNTcuMzE1Yy0zNS41NzIgMTkuMjc2LTc1LjE5MyAzMC44NjQtMTE3LjAxIDMwLjg2NHptLTU5LjEzMi0yMDcuMDA1IDkzLjkxIDkzLjkxYy0xMC4yNDcgNi4wNTEtMjIuMDM5IDkuNzU5LTM0Ljc3OCA5Ljc1OS0zNy45OTUgMC02OC44OTEtMzAuODk3LTY4Ljg5MS02OC44OTEgMC0xMi43MzkgMy43MDgtMjQuNTMxIDkuNzU5LTM0Ljc3OHoiIGZpbGw9IiMwMDAwMDAiLz48L3N2Zz4K"/>
                 					</div>
                 					<input name="pwd1" type="password"  maxlength="8" id="myInput" placeholder="Crea nuova password" required  >
                 				
                 				
                 					<input name="pwd2" type="password"  oninput="compare_pwd()" maxlength="8" id="myInput1" placeholder="Conferma Password" required  >
-                				
-                				<!-- Questo script manda un messaggio se le password non coincidono -->
                 				    <p id="mex_err"><p>
+                				<!-- Questo script manda un messaggio se le password non coincidono -->
+                				   
                 				<script>
                         			function compare_pwd(){
                         				var pwd=document.getElementById("myInput").value;
@@ -93,19 +95,19 @@ if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 &&
                         			}
                                  </script>
 								
-								<div class="col-9 sezione">
+								<div class="col-9 roi">
             <!-- NB: mettere età e genere nella stessa riga --> 
-                					<div class="col-12 sezione">
-                						Inserire la data di nascita
+                					<div class="roi">
+                						Inserisci la data di nascita
                 					</div> 
-            						<div class="col-3">
-            						  <input  name="gg" type="TEXT" class="nascita" placeholder="GG" maxlength="2"required>
+            						<div class="nascita">
+            						  <input  name="gg" type="number" class="nascita" placeholder="GG" maxlength="2"required>
                     	 		    </div>
-                    	 		    <div class="col-3">
-                    	 		      <input name="mese" type="TEXT" class="nascita" placeholder="Mese" maxlength="2"required>
+                    	 		    <div class="nascita">
+                    	 		      <input name="mese" type="number" class="nascita" placeholder="Mese" maxlength="2"required>
                     	 		   </div>
-                    	 		   <div class="col-3">
-                    	 		     <input name="anno" type="TEXT" class="nascita" placeholder="Anno" maxlength="4"required>
+                    	 		   <div class="nascita">
+                    	 		     <input name="anno" type="number" class="nascita" placeholder="Anno" maxlength="4"required>
                     	 		   </div>
                     	       </div>
                     	       <div class="col-9 consegna">
@@ -126,17 +128,17 @@ if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 &&
             		
             			
                 								
-                    	<div class="col-12">
+                    	
                     		<input type="submit" value="Registrati"/>
-                    	</div>
+                    	
             
             </div>
             
     		</form>
     		
-    		<div class="pedice">
+    		<footer style="font-size: 2vw">
     	Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Quelle icone">Quelle icone</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-             </div>	
+             </footer>
 	
 	</body>
 </html>

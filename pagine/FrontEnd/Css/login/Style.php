@@ -27,8 +27,10 @@ body{
 
 
 
-
-
+footer{
+ font-size:1vw;
+ }
+ 
 h1{
     font-family: 'NTR', sans-serif;
     font-size:12.5vw;
@@ -206,6 +208,8 @@ a:active {
 .consegna{  
     font-size:5vw;
     margin-bottom:5%;
+    margin-right:12.5%;
+    margin-left:12.5%;
     font-family: 'Noto Sans JP', sans-serif;
     line-height:1.6;
  }
@@ -315,14 +319,7 @@ a:active {
     
 }
 /*fine stile checkbox*/
-.pedice{
-  with:100%;
-  height:auto;
-  position:absolute;
-  display:block;
-  background-color: black;
-  color: white;
-}
+ 
 /*
 tasto conferma
 */
@@ -453,23 +450,34 @@ input[type=password]:active {
   box-shadow: 2px 2px 7px 1px #FF7E00;
   transform: translateY(4px);
 }
+@media only screen and (orientation: landscape) {
+input[type=password]{
+ font-size:4vw;
+}
+input[type=text]{
+ font-size:4vw;
+}
+
+
+}
 
 /*submit*/
 input[type=submit] {
   float:left;
   display: inline-block;
   border-radius: 20px;
-  background-color:#7CB9E8;
+  background-color:/*#7CB9E8; */#A195C7;
   border: none;
   color: #FFFFFF;
   text-align: center;
   font-size: 5vw;
   padding: 20px;
-  width: 35%;
+  width: 70%;
   transition: all 1s;
   cursor: pointer;
-  margin-right:auto;
-  margin-left:auto;
+  margin-right:15%;
+  margin-left:15%;
+  margin-bottom:20%;
   box-shadow:2px 2px 15px 0px   #ebbb8b;
 }
 @media only screen and (min-width: 600px) {
@@ -549,12 +557,77 @@ input[type=submit]:active {
 .nascita{
   width:20%;
   display: inline;
+  
   }
+  
  .occhio{
   float:right;
   width:20%;
   margin-right:auto;
   margin-left:auto;
   }
+  
+input[type=number]{
+  
+  display: inline-block;
+  border-radius: 20px;
+  background-color:rgb(208,235,218);
+  border: 3px #ebbb8b;
+  outline: none;
+  color:#A195C7 ;
+  text-align: center;
+  font-size:5vw;
+  padding: 20px;
+  width: 20%;
+  transition: all 1s;
+  cursor: pointer;
+  margin-top:4%;
+  margin-bottom:4%;
+  margin-right:3%;
+  margin-left:3%;
+  box-shadow:2px 2px 15px 0px    #ebbb8b;
+}
+@media only screen and (min-width: 600px) {
+ input[type=number] {
+   font-size: 1vw;
+  }
+}
+ input[type=number]{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+ input[type=number]:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+input[type=number]:hover  {
+  padding-right: 25px;
+  background-color: rgb(232,245,237);/*rgba(71,249,130,0.08);*/
+  box-shadow: 2px 2px 7px 1px #FF7E00;
+}
+
+input[type=number]:hover :after {
+  opacity: 1;
+  right: 0;
+  
+}
+input[type=number]:active {
+  background-color: rgb(232,245,237);
+  box-shadow: 2px 2px 7px 1px #FF7E00;
+  transform: translateY(4px);
+}
+@media only screen and (orientation: landscape) {
+input[type=number]{
+ font-size:4vw;
+}
+}
   
 </style>
