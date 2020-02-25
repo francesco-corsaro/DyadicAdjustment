@@ -1,4 +1,5 @@
-<?php session_start();
+<?php 
+session_start();
 // Pulizia dati input
 require 'backend/SicurezzaForm/SicurezzaForm.php';
 if (!empty($_POST[nome])){
@@ -6,17 +7,18 @@ if (!empty($_POST[nome])){
     test_input_nome($_POST[nome]);
     test_input_cognome($_POST[cognome]);
     test_input_pwd($_POST[pwd1], $_POST[pwd2]);
-    test_input_info( $_POST[eta], 18, 99);
-    
+    test_input_info( $_POST[gg], 0, 32, 'Giorno non valido' );
+    test_input_info( $_POST[mese], 0, 13, 'Mese non valido' );
+    test_input_info( $_POST[anno], 1900, 2001,'Anno non valido' );
 }
 
 // Inserimetno dati puliti nel database
 require 'backend/DataBase/InsertRegistrazione.php';
-if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 && $pwdStat && $infoStato!=0) {
+if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 && $pwdStat==1 && empty($infoStay)) {
  
-    Inserisci_id(Anagrafica, $email, $nome, $cognome, $_POST[genere], $_POST[eta], $hash);
- echo $stato;
- header("location: /pagine/Login.php");
+    Inserisci_id(Anagrafica, $email, $nome, $cognome, $_POST[genere],$_POST[gg],$_POST[mese],$_POST[anno], $hash);
+ echo $stato.'<br> Stato query: '.$stato1;
+ //header("location: /pagine/Login.php");
  }
 ?>
 <html>
@@ -45,7 +47,12 @@ if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 &&
 
 	<body>
 		<h1>Corso Mbrs</h1>
-		
+		<p><?php // && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 && $pwdStat && $infoStato!=0
+if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 && $pwdStat==1 && empty($infoStay) ) {
+		    
+		echo $email.' '.$nome.' '. $cognome.' '.$_POST[genere].' '.$_POST[gg].' '.$_POST[mese].' '.$_POST[anno].' '.$hash;
+		}
+		?></p>
 	
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  >
     			
@@ -59,9 +66,9 @@ if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 &&
                 		<div class="col-6">	
                 				<?php echo $emailErr;$emailErr='';?>
                 				<input name="email" type="TEXT" placeholder="Email" required>
-                				<?php echo $nomeErr.$cognomeErr;$nomeErr=$cognomeErr='';?>
+                				<?php echo $nomeErr;$nomeErr='';?>
                 				<input name="nome" type="TEXT" placeholder="Nome" required>
-                			
+                			<?php echo $cognomeErr;$cognomeErr='';?>
             					<input name="cognome" type="TEXT" placeholder="Cognome" required>
 									
                 		<?php echo $pwdErr;?>
@@ -99,6 +106,7 @@ if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 &&
             <!-- NB: mettere età e genere nella stessa riga --> 
                 					<div class="roi">
                 						Inserisci la data di nascita
+                						<?php echo $infoErr;$infoErr='';?>
                 					</div> 
             						<div class="nascita">
             						  <input  name="gg" type="number" class="nascita" placeholder="GG" maxlength="2"required>

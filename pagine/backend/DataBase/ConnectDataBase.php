@@ -2,9 +2,9 @@
  
 
 $servername = "localhost";
-$username = " lucydreams";
+$username = "corsombsr";
 $password ='' ;
-$dbname = "my_lucydreams";
+$dbname = "my_corsombsr";
 
 
 // Create connection

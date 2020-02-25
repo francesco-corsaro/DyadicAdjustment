@@ -1,20 +1,20 @@
 <?php
 
-function Inserisci_id($tabel, $email ,$nome, $cognome, $genere, $eta, $pwd) {
+function Inserisci_id($tabel, $email ,$nome, $cognome,$genere, $gnascita,$mnascita, $anascita, $pwd) {
     
 
 require 'ConnectDataBase.php';
-    Connessione();
+    
 
-$sql = "INSERT INTO $tabel ( Email, Nome, Cognome, Genere, Eta, Password)
-        VALUES ( '$email' ,'$nome', '$cognome', '$genere', '$eta', '$pwd')";
+$sql = "INSERT INTO $tabel ( Email, Nome, Cognome, Genere,Gnascita, Mnascita, Anascita, Password)
+        VALUES ( '$email' ,'$nome', '$cognome', '$genere','$gnascita','$mnascita', '$anascita', '$pwd')";
 if ($conn->query($sql) === TRUE) {
     global $stato;
     $stato= " | Anagrafica Caricata | ";
     
 } else {
-    global $stato;
-    $stato="Error: " . $sql . "<br>" . $conn->error;
+    global $stato1;
+    $stato1="Error: " . $sql . "<br>" . $conn->error;
    
 }
 $conn->close();

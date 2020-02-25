@@ -34,7 +34,7 @@ function test_input_nome($data) {
     $data=strtolower($data);
     if (!preg_match("/^[a-zA-Z ]*$/",$data)) {
         global $nomeErr;
-        $nomeErr= '<div class="col-12 errore">Sono consentiti solo lettere e numeri</div>';
+        $nomeErr= '<div class="col-12 errore">Perfavore riscrivi il nome </div>';
         
     }else {
         global $nomeStat;global $nome;
@@ -49,7 +49,7 @@ function test_input_cognome($data) {
     $data=strtolower($data);
     if (!preg_match("/^[a-zA-Z ]*$/",$data)) {
         global$cognomeErr;
-        $cognomeErr= '<div class="col-12 errore">Sono consentiti solo lettere e numeri</div>';
+        $cognomeErr= '<div class="col-12 errore">Perfavore riscrivi il cognome</div>';
         ;
     }else {
         global$cognomeStat; 
@@ -94,7 +94,7 @@ function test_input_pwd($pwd, $pwd2) {
         $pwd=stripslashes($pwd);
         if (!preg_match("/^[a-zA-Z0-9 ]*$/",$pwd)) {
             global$pwdErr;
-            $pwdErr= '<div class="col-12 errore">Sono consentiti solo lettere e numeri</div>';
+            $pwdErr= '<div class="col-12 errore">La password può contenere solo lettere e numeri</div>';
           
         }else {
             global $pwdStat;
@@ -104,18 +104,17 @@ function test_input_pwd($pwd, $pwd2) {
         }
     }
     
-    function test_input_info($info,$min, $max) {
+    function test_input_info($info,$min, $max,$mess) {
         $info= htmlspecialchars($info);
         $info = trim($info);
         //$info  = stripslashes($info);
         if (!preg_match("/^[0-9]*$/",$info) or $info<=$min or $info>=$max) {
             global$infoErr;
-            $infoErr = '<div class="col-12 errore">Formato non valido: Età, peso o altezza </div>';
-            global$infoStato;
-            $infoStato=0;
+            $infoErr = '<div class="col-12 errore">'.$mess.'</div>';
+            global$infoStay;
+            $infoStay=0;
         }else{
-            global$infoStato;
-            $infoStato=1;
+            
             global$infoStat;
             $infoStat=1;
            return $info; 
