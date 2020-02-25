@@ -1,3 +1,6 @@
+<?php
+session_start();
+	?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
 <html>
 <head>
@@ -7,9 +10,7 @@
 
     <body>
     <p>In questa pagina viene chiesto di inserire il codice id del partner</p>
-    <?php
-
-	?>
+    
     </body>
    
 </html>

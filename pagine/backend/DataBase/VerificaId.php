@@ -3,40 +3,26 @@
 
 require 'ConnectDataBase.php'; //serve a connettersi al database
 
-$sql = "SELECT * FROM Coppie";
+$sql = "SELECT IdPartner1, IdPartner2 FROM Coppie";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     
     while(   $row = $result->fetch_assoc()) {
         if ($row['IdPartner1'] == $_SESSION['codice'] or $row['IdPartner2'] == $_SESSION['codice']){
-            $conn->close();
+            
             
             require 'ConnectDataBase.php';
+            $coppia=1;
+            echo $row['IdPartner2'];
+            $conn->close();
             
-            $sql = "SELECT IdPartner FROM RispostePre";
-            $result = $conn->query($sql);
             
-            if ($result->num_rows > 0) {
                 
-                while(   $row = $result->fetch_assoc()) {
-                    if ($row['IdPartner']==$_SESSION['codice']  ){
-                        header("location: /DyadicAdjustment/pagine/Attesa.php");
-                        
-                    }else {
-                        $risposte=0;
-                    }
-                }
-                
-            }
-            if ($risposte==0) {
-                header("location:/DyadicAdjustment/pagine/Questionario.php");
-                
-            }
         }
-        elseif ($row['IdPartner1'] !== $_SESSION['codice'] or $row['IdPartner2'] !== $_SESSION['codice']  ) {
+        elseif ($row['IdPartner1'] != $_SESSION['codice'] or $row['IdPartner2'] != $_SESSION['codice']  ) {
             
-            $utente=0;
+            echo 'coppia non inserita';
             
             
             
@@ -47,11 +33,31 @@ if ($result->num_rows > 0) {
     
 }
 }
+/*
 if ($utente==0) {
     header("location:/DyadicAdjustment/pagine/Coppie.php");
+}*/
+if ($coppia==1) {
+    
+
+require 'ConnectDataBase.php';
+
+$sql = "SELECT IdPartner FROM RispostePre";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    
+    while(   $row = $result->fetch_assoc()) {
+        if ($row['IdPartner']==$_SESSION['codice']  ){
+            header("location: /DyadicAdjustment/pagine/Attesa.php");
+            
+        }else {
+            header("location:/DyadicAdjustment/pagine/Questionario.php");
+        }
+    }
+    
 }
-
-
+}
   /*  }
 } elseif ($result==FALSE){
     $_SESSION['denied']=1;

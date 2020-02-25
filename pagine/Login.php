@@ -36,7 +36,7 @@ if ($_POST['out']==1) {
 		<?php 
 		echo  $_SESSION['errorePres'];$_SESSION['errorePres']='';
 		if ($_SESSION['denied']== 1) {
-		    echo "<div>Utentente non trovato</div>";
+		    echo "<div>Utente non trovato</div>";
 		    $_SESSION['denied']= 0;
 		}?>
 		<div class="col-9 tenda">
@@ -78,7 +78,7 @@ if ($_POST['out']==1) {
                     		</script>
                     	</div>
                     	<div class="col-12 consegna">
-                    		Oppure <b><a href="/DyadicAdjustment/Pagine/Registrazione.php">Registrati</a></b>
+                    		Oppure <b><a href="/DyadicAdjustment/pagine/Registrazione.php">Registrati</a></b>
                     	</div>
 		</div>
 		</form>
