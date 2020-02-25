@@ -30,10 +30,11 @@ if ($_POST['out']==1) {
     </head>
 
 	<body>
-		<h1>Sogni Lucidi</h1>
+		<h1>Corso Mbsr</h1>
 		
 		<form name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  >
 		<?php 
+		echo  $_SESSION['errorePres'];$_SESSION['errorePres']='';
 		if ($_SESSION['denied']== 1) {
 		    echo "<div>Utentente non trovato</div>";
 		    $_SESSION['denied']= 0;
@@ -47,7 +48,7 @@ if ($_POST['out']==1) {
         				</div>
         				
                     		<div class="col-6">	
-                    			<?php echo $emailErr;?>
+                    			<?php echo $emailErr;$emailErr='';?>
                     			<input name="email" type="TEXT" placeholder="Username" oninput=validateForm() required>
                     		</div>
                     		<div class="col-12">
@@ -59,7 +60,7 @@ if ($_POST['out']==1) {
                         		</div>
                 			</div>
                 			<div class="col-12 collegamento">
-                				<a href="/pagine/NewPwd.php" >Hai dimenticato la password? Clicca qui</a>
+                				<a href="/DyadicAdjustment/pagine/NewPwd.php" >Hai dimenticato la password? Clicca qui</a>
                 			</div>
 						<div class="col-12">
                     		<input type="submit" id="myBtn" value="Accedi" disabled/>
@@ -77,7 +78,7 @@ if ($_POST['out']==1) {
                     		</script>
                     	</div>
                     	<div class="col-12 consegna">
-                    		Oppure <b><a href="/Pagine/Registrazione.php">Registrati</a></b>
+                    		Oppure <b><a href="/DyadicAdjustment/Pagine/Registrazione.php">Registrati</a></b>
                     	</div>
 		</div>
 		</form>

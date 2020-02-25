@@ -13,13 +13,18 @@ if (!empty($_POST[nome])){
 }
 
 // Inserimetno dati puliti nel database
+
+if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 && $pwdStat==1 && empty($infoStay)) {
+    require 'backend/DataBase/VerificaPresenza.php';
+}
+/*
 require 'backend/DataBase/InsertRegistrazione.php';
 if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 && $pwdStat==1 && empty($infoStay)) {
  
     Inserisci_id(Anagrafica, $email, $nome, $cognome, $_POST[genere],$_POST[gg],$_POST[mese],$_POST[anno], $hash);
- echo $stato.'<br> Stato query: '.$stato1;
+    echo $stato.'<br> Stato query: '.$stato1.$_SESSION['errorePres'];
  //header("location: /pagine/Login.php");
- }
+ }*/
 ?>
 <html>
     <head>
@@ -50,7 +55,7 @@ if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 &&
 		<p><?php // && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 && $pwdStat && $infoStato!=0
 if (!empty($_POST[nome])  && $emailStat==1 && $nomeStat==1 && $cognomeStat==1 && $pwdStat==1 && empty($infoStay) ) {
 		    
-		echo $email.' '.$nome.' '. $cognome.' '.$_POST[genere].' '.$_POST[gg].' '.$_POST[mese].' '.$_POST[anno].' '.$hash;
+    echo $email.' '.$nome.' '. $cognome.' '.$_POST[genere].' '.$_POST[gg].' '.$_POST[mese].' '.$_POST[anno].' '.$hash.' '.$_SESSION['errorePres'];
 		}
 		?></p>
 	
