@@ -4,27 +4,29 @@
 <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=NTR&display=swap" rel="stylesheet">
 <style type="text/css">
+* {
+  box-sizing: border-box;
+}
 <?php include 'griglia_css.php';?>
 
 /*impostazioni body rgba(71,249,130,0.34);*/
+
+
+body{
+    background-image:linear-gradient(171deg, rgba(157,212,196,1) 24%, rgba(164,149,196,1) 100%);
+   
+    font-family: 'Quicksand', sans-serif;
+    } 
 
 .row::after {
   content: "";
   clear: both;
   display: table;
 }
-body{
-    background-image:linear-gradient(171deg, rgba(157,212,196,1) 24%, rgba(164,149,196,1) 100%);
-   
-    font-family: 'Quicksand', sans-serif;
-    } 
-* {
-  box-sizing: border-box;
-}
 h1{
     font-family: 'NTR', sans-serif;
     font-size:12vw;
-    color:#7CB9E8;
+    color:#A195C7
     }
   @media only screen and (min-width: 760px) {
   h1 {
@@ -34,7 +36,8 @@ h1{
 .titolo{
     font-family: 'NTR', sans-serif;
     font-size:10vw;
-    color:#7CB9E8;
+    color:#A195C7;
+    text-align: center;
     }
   @media only screen and (min-width: 760px) {
   .titolo {
@@ -115,7 +118,7 @@ a:active {
     widht:75%;
     font-size:6vw;
     color:black;
-    
+    text-align: center;
     
     }   
     @media only screen and (min-width: 760px) {
@@ -195,7 +198,7 @@ a:active {
   }
 }
 .consegna{  
-    font-size:6vw;
+    font-size:5vw;
     margin-bottom:5%;
     font-family: 'Noto Sans JP', sans-serif;
     line-height:1.6;
@@ -305,9 +308,16 @@ a:active {
     transform: rotate(45deg);
     
 }
-/*fine stile checkbox
-
-
+/*fine stile checkbox*/
+.pedice{
+  with:100%;
+  height:auto;
+  position:absolute;
+  display:block;
+  background-color: black;
+  color: white;
+}
+/*
 tasto conferma
 */
 .floatdx{
@@ -322,23 +332,23 @@ tasto conferma
  
 }  */  
 input[type=text]{
-    float:right;
+  
   display: inline-block;
   border-radius: 20px;
-  background-color:rgba(71,249,130,0.08);
+  background-color:rgb(208,235,218);
   border: 3px #ebbb8b;
   outline: none;
-  color:#7CB9E8; ;
+  color:#A195C7 ;
   text-align: center;
-  font-size:4vw;
+  font-size:5vw;
   padding: 20px;
   width: 80%;
   transition: all 1s;
   cursor: pointer;
   margin-top:4%;
   margin-bottom:4%;
-  margin-right:auto;
-  margin-left:auto;
+  margin-right:10%;
+  margin-left:10%;
   box-shadow:2px 2px 15px 0px    #ebbb8b;
 }
 @media only screen and (min-width: 600px) {
@@ -364,7 +374,7 @@ input[type=text]:after {
 
 input[type=text]:hover  {
   padding-right: 25px;
-  background-color: rgba(71,249,130,0.08);
+  background-color: rgb(232,245,237);/*rgba(71,249,130,0.08);*/
   box-shadow: 2px 2px 7px 1px #FF7E00;
 }
 
@@ -374,7 +384,66 @@ input[type=text]:hover :after {
   
 }
 input[type=text]:active {
-  background-color: rgba(71,249,130,0.08);
+  background-color: rgb(232,245,237);
+  box-shadow: 2px 2px 7px 1px #FF7E00;
+  transform: translateY(4px);
+}
+
+/*input type password*/
+input[type=password]{
+  
+  display: inline-block;
+  border-radius: 20px;
+  background-color:rgb(208,235,218);
+  border: 3px #ebbb8b;
+  outline: none;
+  color:#A195C7 ;
+  text-align: center;
+  font-size:5vw;
+  padding: 20px;
+  width: 80%;
+  transition: all 1s;
+  cursor: pointer;
+  margin-top:4%;
+  margin-bottom:4%;
+  margin-right:10%;
+  margin-left:10%;
+  box-shadow:2px 2px 15px 0px    #ebbb8b;
+}
+@media only screen and (min-width: 600px) {
+  input[type=password] {
+   font-size: 1vw;
+  }
+}
+input[type=password] {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+input[type=password]:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+input[type=password]:hover  {
+  padding-right: 25px;
+  background-color: rgb(232,245,237);/*rgba(71,249,130,0.08);*/
+  box-shadow: 2px 2px 7px 1px #FF7E00;
+}
+
+input[type=password]:hover :after {
+  opacity: 1;
+  right: 0;
+  
+}
+input[type=password]:active {
+  background-color: rgb(232,245,237);
   box-shadow: 2px 2px 7px 1px #FF7E00;
   transform: translateY(4px);
 }
@@ -469,43 +538,17 @@ input[type=submit]:active {
   cursor: pointer;
 }
 <?php require 'bottone_radio.php';?>
-input[type=password] {
-  
-  display: inline-block;
-  border-radius: 20px;
-  background-color:rgba(71,249,130,0.08);
-  border: none;
-  outline: none;
-  color:#7CB9E8; ;
-  text-align: center;
-  font-size: 7vw;
-  padding: 20px;
-  width: 80%;
-  transition: all 1s;
-  cursor: pointer;
-  margin-top:6%;
-  margin-right:auto;
-  margin-left:auto;
- box-sizing: border-box;
-  
-  box-shadow:2px 2px 15px 0px   #ebbb8b;
-}
-@media only screen and (min-width: 600px) {
- input[type=password]{
-   font-size: 1.4vw;
-  }
-}
- input[type=password] {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.4s;
-}
+
 
 .nascita{
   width:20%;
   display: inline;
   }
- 
-
+ .occhio{
+  float:right;
+  width:20%;
+  margin-right:auto;
+  margin-left:auto;
+  }
+  
 </style>
