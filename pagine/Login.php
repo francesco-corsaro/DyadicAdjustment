@@ -33,12 +33,12 @@ if ($_POST['out']==1) {
 		<h1>Corso Mbsr</h1>
 		
 		<form name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  >
-		<?php 
+		<p class="errore"><?php 
 		echo  $_SESSION['errorePres'];$_SESSION['errorePres']='';
 		if ($_SESSION['denied']== 1) {
-		    echo "<div>Utente non trovato</div>";
+		    echo "Utente non trovato";
 		    $_SESSION['denied']= 0;
-		}?>
+		}?></p>
 		<div class="col-9 tenda">
     				<div class="titolo">Login</div>
     					<div class="col-11">
