@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
         elseif ($row['IdPartner1'] != $_SESSION['codice'] or $row['IdPartner2'] != $_SESSION['codice']  ) {
             
             echo 'coppia non inserita';
-            
+            header("location:/DyadicAdjustment/pagine/Coppie.php");
             
             
             /* var_dump($row);*/

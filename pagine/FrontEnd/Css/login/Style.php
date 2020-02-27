@@ -81,6 +81,8 @@ a:active {
     text-align:left;
     
     }
+    
+    
 /*RESPONSIVE PER MONITOR MAGGIORI DI 760PX 
  @media only screen and (min-width: 768px) {
     h1{font-size:4vw;
@@ -466,7 +468,7 @@ input[type=submit] {
   float:left;
   display: inline-block;
   border-radius: 20px;
-  background-color:/*#7CB9E8; */#A195C7;
+  background-color:/*#7CB9E8; */#8E8EB6;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -503,7 +505,7 @@ input[type=submit]:after {
 
 input[type=submit]:hover  {
   padding-right: 25px;
-  background-color: #0063FF;
+  background-color: #A195C7;
 }
 
 input[type=submit]:hover :after {
@@ -512,9 +514,21 @@ input[type=submit]:hover :after {
   
 }
 input[type=submit]:active {
-  background-color: #7CB9E8;
+  background-color: #A195C7;
   box-shadow: 1px 1px 7px 0px  #99CECC;
   transform: translateY(4px);
+}
+/*bottone codice utente*/
+#myBtnUt{
+ 
+  width:40%;
+  float:right;
+  
+  margin-top: 3%;
+  margin-left:auto;
+  margin-right:auto;
+  display: inline;
+  background-color:#656582;
 }
 
 /* impostazioni range*/
@@ -559,7 +573,16 @@ input[type=submit]:active {
   display: inline;
   
   }
-  
+#cod_utente{
+    
+  width:50%;
+  margin-top: 3%;
+  margin-left:auto;
+  margin-right:auto;
+  display: inline;
+}
+
+
  .occhio{
   float:right;
   width:20%;
