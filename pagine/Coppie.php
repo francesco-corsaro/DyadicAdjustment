@@ -1,7 +1,7 @@
 <?php
 session_start();
 	?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,7 +17,14 @@ session_start();
       <div class="tenda">
        <div class="titolo">Partner</div>
         <div class="roi">
-        Benvenuto,<br>
+        Benvenut<?php  //Mette la prima lettera maiuiscola e cambia il messagio in base al genere
+                    $_SESSION['nome']=ucfirst( $_SESSION['nome']);
+                    if ($_SESSION['gen']==1) {
+                        echo "o ".$_SESSION['nome'] ;
+        }             else {
+                        echo "a <em class=\"titolo\">".$_SESSION['nome']."</em>" ;
+        }?>,<br>
+        
          il tuo codice utente è:<br> <b class="titolo"><?php echo $_SESSION['codice']; ?></b>.
         <br>Prima di poter accedere al test è necessario inserire qui sotto 
         il  nome e il codice utente del prorprio partner. 
@@ -51,7 +58,16 @@ session_start();
        
       </div>
       </form>
+      <br /> <br />
+      <div class="roi">
+      Se il tuo partner non ha ancora effettuato l'accesso
+      puoi inviare un promemoria. 
+      <a href="">Clicca qui!</a>
+      </div>
+      
+      <!-- Qua finisce tenda -->
      </div>
+     <!-- Qua finisce row -->
     </div>
     </body>
    

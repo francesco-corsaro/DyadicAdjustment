@@ -8,7 +8,7 @@ pwd_match($_POST[pwd]);
 
 require 'DataBase/ConnectDataBase.php'; //serve a connettersi al database
 
-$sql = "SELECT Email, Password, Id, Nome, Cognome FROM Anagrafica";
+$sql = "SELECT Email, Password, Id, Nome, Cognome, Genere FROM Anagrafica";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
             $_SESSION['bypass']='b1p4ss';
             $_SESSION['nickName']=$email;
             $_SESSION['codice']= $row["Id"]  ;
-            
+            $_SESSION['gen']= $row["Genere"];
             $_SESSION['cogn']=$row["Cognome"];
             $_SESSION['nome']=$row["Nome"];
             $conn->close();
