@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+if (!empty(htmlspecialchars($_POST['nome']))) {
+    require 'backend/VerificaPartner.php';
+}
 	?>
 
 <html>
@@ -13,18 +17,19 @@ session_start();
     <body>
      <h1>Corso Mbsr</h1>
      
-     <div class="row">
+     <div class="row"> <?php echo $err_partner ;?>
       <div class="tenda">
        <div class="titolo">Partner</div>
         <div class="roi">
         Benvenut<?php  //Mette la prima lettera maiuiscola e cambia il messagio in base al genere
                     $_SESSION['nome']=ucfirst( $_SESSION['nome']);
                     if ($_SESSION['gen']==1) {
-                        echo "o ".$_SESSION['nome'] ;
+                        echo "o "  ;
         }             else {
-                        echo "a <em class=\"titolo\">".$_SESSION['nome']."</em>" ;
-        }?>,<br>
-        
+                        echo "a " ;
+        } 
+        echo "<em class=\"titolo\">".$_SESSION['nome']."</em>,<br>";
+        ?>
          il tuo codice utente è:<br> <b class="titolo"><?php echo $_SESSION['codice']; ?></b>.
         <br>Prima di poter accedere al test è necessario inserire qui sotto 
         il  nome e il codice utente del prorprio partner. 
@@ -60,7 +65,7 @@ session_start();
       </form>
       <br /> <br />
       <div class="roi">
-      Se il tuo partner non ha ancora effettuato l'accesso
+      Se il tuo partner non ha ancora effettuato la registrazione
       puoi inviare un promemoria. 
       <a href="">Clicca qui!</a>
       </div>

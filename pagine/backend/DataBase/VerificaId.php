@@ -1,5 +1,7 @@
 <?php
-
+/* Questo script verifica se l'utente è stato inserito nella tabella coppie
+ * 
+ */
 
 require 'ConnectDataBase.php'; //serve a connettersi al database
 
@@ -12,7 +14,7 @@ if ($result->num_rows > 0) {
         if ($row['IdPartner1'] == $_SESSION['codice'] or $row['IdPartner2'] == $_SESSION['codice']){
             
             
-            require 'ConnectDataBase.php';
+            
             $coppia=1;
             echo $row['IdPartner2'];
             $conn->close();
