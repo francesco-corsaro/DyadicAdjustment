@@ -109,11 +109,11 @@ a:active {
 }
 .attak{
 	
-	top:0;
-	background-color:#EA8BB5; /*background-color:#FFFF4A rgba(255,51,0);*/
+	
+	background-color:#EA8BB5 ;/*background-color:#FFFF4A rgba(255,51,0);*/
   	border-radius:25px;
   	padding:4%;
-    font-size:6vw;
+    font-size:3.5vw;
   	z-index: 3;
   	 
 }@media only screen and (min-width: 760px) {
@@ -126,7 +126,7 @@ a:active {
     margin:auto;
     bottom:2%;
     widht:75%;
-    font-size:6vw;
+    font-size:5.5vw;
     color:black;
     text-align: center;
     
@@ -139,7 +139,7 @@ a:active {
 }
    /*con questo coloro  di azzurro <b> nel <div class=tenda>*/ 
  .color{
-    color:#A195C7;
+    color:#8ab1e6;
     font-size:5vw;
     text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
@@ -602,15 +602,15 @@ input[type=number]{
   outline: none;
   color:#A195C7 ;
   text-align: center;
-  font-size:5vw;
+  font-size:7vw;
   padding: 20px;
-  width: 20%;
+  width: 25%;
   transition: all 1s;
   cursor: pointer;
   margin-top:4%;
   margin-bottom:4%;
-  margin-right:3%;
-  margin-left:3%;
+  margin-right:37.5%;
+  margin-left:37.5%;
   box-shadow:2px 2px 15px 0px    #ebbb8b;
 }
 @media only screen and (min-width: 600px) {
