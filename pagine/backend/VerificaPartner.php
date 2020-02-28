@@ -38,14 +38,13 @@ if ($result->num_rows > 0) {
             
             //header("location:/DyadicAdjustment/pagine/Login.php");
         } else {
-            echo 'è qui';echo "Error: " . $sql . "<br>" . $conn->error;
-            var_dump($row);
+            echo 'Sono stati riscontrati problemi nel caricare i dati';
         }
     }
     
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    
     $err_partner='Il nome o codice errato';
 }
-echo $err_partner;
+
 ?>

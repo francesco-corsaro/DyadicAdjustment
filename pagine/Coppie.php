@@ -17,7 +17,7 @@ if (!empty(htmlspecialchars($_POST['nome']))) {
     <body>
      <h1>Corso Mbsr</h1>
      
-     <div class="row"> <?php echo $err_partner ;?>
+     <div class="row"> 
       <div class="tenda">
        <div class="titolo">Partner</div>
         <div class="roi">
@@ -35,7 +35,7 @@ if (!empty(htmlspecialchars($_POST['nome']))) {
         il  nome e il codice utente del prorprio partner. 
         </div>
         <form name="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
-      
+         <div class="errore"><?php echo $err_partner ;?></div>
         <input name="nome" type="TEXT" placeholder="Nome Partner" required>
         <input name="cod_utente" type="number" Id="cod_utente" placeholder="Cod. partner" maxlength="6"  oninput="validateForm()" required>
         <div class="nascita">

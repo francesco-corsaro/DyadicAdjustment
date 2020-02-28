@@ -139,9 +139,9 @@ a:active {
 }
    /*con questo coloro  di azzurro <b> nel <div class=tenda>*/ 
  .color{
-    color:black;
-    font-size:7vw;
-    text-align:centred;
+    color:#A195C7;
+    font-size:5vw;
+    text-align: center;
     font-family: 'Noto Sans JP', sans-serif;
     line-height:1.6;
     }   
@@ -180,6 +180,7 @@ a:active {
  padding:8% 6%;/* 2% 3%;
  margin-left:5%;
  margin-right:5%;*/
+ margin-top:7.5%;
  margin-bottom:7%;
  border-style: none;
  border-radius:25px;
