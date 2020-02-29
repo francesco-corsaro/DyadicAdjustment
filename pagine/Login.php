@@ -86,7 +86,7 @@ if ($_POST['out']==1) {
                     	</div>
 		</div>
 		</form>
-	
+		<a href="indice.html">Indice</a>
     <footer style="font-size: 2vw">
     	Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Quelle icone">Quelle icone</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
     </footer>

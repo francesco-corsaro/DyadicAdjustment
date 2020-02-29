@@ -116,6 +116,7 @@ $chiave='1';
     	 <br>
      	<p><input type="submit" value="Invia"/></p>
      </form>
+     	<a href="indice.html">Indice</a>
 	</body>
 </html>
 

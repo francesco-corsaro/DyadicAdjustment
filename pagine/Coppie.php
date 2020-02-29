@@ -74,6 +74,7 @@ if (!empty(htmlspecialchars($_POST['nome']))) {
      </div>
      <!-- Qua finisce row -->
     </div>
+    	<a href="indice.html">Indice</a>
     </body>
    
 </html>
