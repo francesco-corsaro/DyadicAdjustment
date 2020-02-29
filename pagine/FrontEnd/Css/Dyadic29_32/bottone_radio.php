@@ -1,14 +1,13 @@
-
 /* The container */
 .contenitore {
-widht:100%;
+widht:50%;
   display: inline-block;
   position: relative;
   padding-left: 35px;
   margin-top:8%;
   cursor: pointer;
   margin-left: 5%;
-  font-size: 22px;
+  font-size: 19px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -36,20 +35,20 @@ widht:100%;
   
   height: 25px;
   width: 25px;
-  background-color: #DF6E00;
+  background-color: #AD6B81;
   border-radius: 50%;
   
 }
 
 /* On mouse-over, add a grey background color */
 .contenitore:hover input ~ .buttondo {
-  background-color:#FF8E20 ;
+  background-color:#E68EAB ;
 }
 
 /* When the radio button is checked, add a blue background */
 .contenitore input:checked ~ .buttondo {
-  background-color:#FF7E00;/*tangerine yellow*/
-  box-shadow: 2px 2px 7px 1px #FF7E00;
+  background-color:#E68EAB;/*tangerine yellow*/
+  box-shadow: 2px 2px 7px 1px #E68EAB;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -72,4 +71,8 @@ widht:100%;
 	height: 10px;
 	border-radius: 50%;
 	background: white;
+}
+
+#radiofin{
+margin-left:2%;
 }

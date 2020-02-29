@@ -32,139 +32,106 @@ if (array_key_exists("38",$_POST['ffmq'])) {
     header("location: /MBSR/PGWBI.php") ;
 }*/
 
-
+if (isset($_POST[ffmq])) {
+    header("location: Attesa.php") ;
+}
 $ffmq=array(
-1=> '25. A vere uno stimolante scambio di idee',
-2=> '26. Ridere insieme',
-3=> '27. Discutere con calma di qualcosa',
-4=> '28. Lavorare insieme ad un progetto'
-
+1=> 'Desidero disperatamente che la mia relazione riesca, e supererei qualsiasi ostacolo perché ciò accada.',
+2=> 'Desidero moltissimo che la mia relazione riesca, e farò tutto ciò che è in mio potere perché ciò accada.',
+3=> 'Desidero moltissimo che la mia relazione e riesca, e farò la mia giusta parte perché ciò accada',
+4=> 'Sarebbe bello se la mia relazione riuscisse, ma non posso fare molto di più di quello che sto già facendo perché riesca.',
+5=> 'Sarebbe bello se la mia relazione riuscisse, ma mi rifiuto di fare più di quanto io stia già facendo per continuare il rapporto.',
+6=> 'La mia relazione non potrà mai riuscire, e non c\'è più nulla che io possa fare per continuare il rapporto'
 );
 ?>
-<html><head>
+<html>
+<head>
 
 <title>Dyadic Adjustment Scale</title>
-<?php require 'FrontEnd/Css/Dyadic1_15/Style.php'; ?>
+<?php require 'FrontEnd/Css/Dyadic29_32/Style.php'; ?>
 </head>
 <body>
 	<h1>Corso Mbsr</h1>
 	<div class="titolo">Dyadic Adjustment Scale</div>
-	<div class="col-9 roi">
-		 La maggior parte delle persone ha dei disaccordi nelle proprie relazioni. La preghiamo di indicare qui di
-		seguito il grado di accordo o disaccordo tra lei ed il suo partner per ogni quesito della lista, cliccando sulla risposta 
-		che corrisponde alla Sua opinione.
 	
-	</div>
 	
 	<form action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"  >
 		<div class="col-12 tenda">
-            <p class="color"><b>23. Indichi con quale frequenza bacia il suo/a compagno/a.</b></p>
-            <label class="contenitore" ">
-                Ogni giorno
-                <input  name="ffmq['.$chiave.']" type="radio" value="4" <?php  echo$controllo?> />
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-                Quasi ogni giorno
-                <input  name="ffmq['.$chiave.']" type="radio" value="3" <?php  echo$controllo?>/>
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-               Occasionalmente
-                <input name="ffmq['.$chiave.']" type="radio" value="2" <?php  echo$controllo?>/>
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-               Raramente
-                <input  name="ffmq['.$chiave.']" type="radio" value="1" <?php  echo$controllo?>/>
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore col-12" >
-                Mai
-                <input  name="ffmq['.$chiave.']" type="radio" value="0" <?php  echo$controllo?>/>
-                <span class="buttondo"></span>
-            </label>
+		  <div class="cappello">
+		  Ci sono delle cose sulle quali le coppie a volte sono d'accordo e a volte sono in disaccordo. Indichi se
+ciascuna delle situazioni sotto elencate ha causato divergenza di opinioni o ha creato problemi nella sua
+relazione nelle ultime settimane. Clicchi sul "SI" o sul "NO" 
+		  </div>
+            <p class="color"><b>29. Essere troppo stanchi per fare l'amore</b></p>
+           <div class="consegna">
+             <label class="contenitore" id="gen">
+             	<input  name="genere" id="gen" type="radio" value="1" required/>
+             	<span class="buttondo" id="gen" ></span>
+             	Si 
+             </label>
+             
+             <label class="contenitore" id="gen2">	
+             	<input  name="genere"id="gen2" type="radio" value="2" required />
+             	<span class="buttondo" id="gen2" ></span>
+             	No
+              </label>
+             </div>
             
-            
+            <p class="color"><b>30. Non mostrare amore</b></p>
+            <div class="consegna">
+             <label class="contenitore" id="gen">
+             	<input  name="genere" id="gen" type="radio" value="1" required/>
+             	<span class="buttondo" id="gen" ></span>
+             	Si 
+             </label>
+             
+             <label class="contenitore" id="gen2">	
+             	<input  name="genere"id="gen2" type="radio" value="2" required />
+             	<span class="buttondo" id="gen2" ></span>
+             	No
+              </label>
+             </div>
           </div>
           <div class="col-12 tenda">
-           <p class="color"><b>24. Indichi in che misura lei ed il suo/a compagno/a condividete degli interessi fuori dalle mura domestiche.</b></p>
-            <label class="contenitore col-12" ">
-                Tutti
-                <input  name="ffmq['.$chiave.']" type="radio" value="4" <?php  echo$controllo?> />
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-                La maggior parte
-                <input  name="ffmq['.$chiave.']" type="radio" value="3" <?php  echo$controllo?>/>
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore col-12 " >
-               Alcuni
-                <input name="ffmq['.$chiave.']" type="radio" value="2" <?php  echo$controllo?>/>
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-             Molto pochi
-                <input  name="ffmq['.$chiave.']" type="radio" value="1" <?php  echo$controllo?>/>
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore col-12" >
-               Nessuno
-                <input  name="ffmq['.$chiave.']" type="radio" value="0" <?php  echo$controllo?>/>
-                <span class="buttondo"></span>
-            </label>
-            
-            
+            <div class="cappello">
+            31. I nseguenti numeri rappresentano diversi gradi di felicità nella relazione. La preghiamo di
+			inserire il numero che meglio descrive il grado di felicità, tutto considerato, della sua relazione.
+			</div>
+           <p class="color"><b>0= Estremamente infelice</b></p>
+           <p class="color"><b>1= Abbastanza infelice </b></p> 
+           <p class="color"><b>2= Un po' infelice </b></p> 
+           <p class="color"><b>3= Felice</b></p> 
+           <p class="color"><b>4= Molto felice </b></p> 
+           <p class="color"><b>5= Estremamente felice </b></p> 
+           <p class="color"><b>6= Perfetta</b></p>
+           
+           <input name="cod_utente"  type="number"  placeholder="N°" max="5"  <?php  echo $controllo?> >
           </div>
           <div class="col-12">
           <div class="adesivo attak">
-	Quanto spesso secondo lei si verifica la seguente situazione tra lei e il suo/a compagno /a?
+			
+			32. Quali delle seguenti affermazioni meglio descrive ciò che pensa del futuro del suo rapporto?
 		</div>
+			<div class="col-12 tenda" id="tendaFin">
 		<?php 
 
 $chiave='1';
  foreach ($ffmq as $chiave=>$testo){
    
      echo  
-        '<div class="col-12 tenda">
-            <p class="color"><b>'.$testo.'</b></p>
-            <label class="contenitore" ">
-                Mai
-                <input  name="ffmq['.$chiave.']" type="radio" value="0" '.$controllo.' />
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-                Meno di una volta al mese
-                <input  name="ffmq['.$chiave.']" type="radio" value="1" '.$controllo.'/>
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-               Una o due volte al mese
-                <input name="ffmq['.$chiave.']" type="radio" value="2" '.$controllo.' />
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-               Una o due volte a settimana
-                <input  name="ffmq['.$chiave.']" type="radio" value="3" '.$controllo.'/>
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-               Una volta al giorno
-                <input  name="ffmq['.$chiave.']" type="radio" value="4" '.$controllo.'/>
-                <span class="buttondo"></span>
-            </label>
-            <label class="contenitore" >
-                 Più di una volta al giorno
-                <input  name="ffmq['.$chiave.']" type="radio" value="5" '.$controllo.'/>
-                <span class="buttondo"></span>
-            </label>
+        '
             
-          </div>';
+            <label class="contenitore" ">
+                <b class="color">'.$testo.'</b>
+                <input  name="ffmq[]" id="radiofin" type="radio" value="0" '.$controllo.' />
+                <span class="buttondo"></span>
+            </label>
+                       
+         ';
     
  }
 ?>
-
+			</div>
 		</div>
     	 <br>
      	<p><input type="submit" value="Invia"/></p>

@@ -1,11 +1,11 @@
 <?php
 require 'backend/SicurezzaForm/SicurezzaForm.php';
 $partner=$_POST[nome];
-$cod_utente=$_SESSION['codice'];
+
 $cod_partner=$_POST[cod_utente];
 $utente=$_SESSION['nome'];
-
-test_input_nome($partner);
+$cod_utente=$_SESSION['codice'];
+test_input_nome($partner); //NB: La variabile partner pulita diventa $nome
 
 //bISOGNA INSEWRIRE LA PULIZIA PER IL CODICE DEL PARTNER
 

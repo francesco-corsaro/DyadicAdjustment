@@ -32,7 +32,9 @@ if (array_key_exists("38",$_POST['ffmq'])) {
     header("location: /MBSR/PGWBI.php") ;
 }*/
 
-
+if (isset($_POST[cod_utente])) {
+    header("location: Dyadic23_28.php") ;
+}
 $das16_22=array(
 1=> '16. Quanto spesso lei parla o ha preso in considerazione il divorzio, la separazione o il porre fine alla sua relazione?',
 2=> '17. Quanto spesso lei o il suo compagno/ a ve ne andate di casa dopo un litigio?',

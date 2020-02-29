@@ -31,7 +31,9 @@ if (array_key_exists("38",$_POST['ffmq'])) {
     //Mando alla pagina successiva
     header("location: /MBSR/PGWBI.php") ;
 }*/
-
+if (isset($_POST[ffmq])) {
+    header("location: Dyadic29_32.php") ;
+}
 
 $ffmq=array(
 1=> '25. A vere uno stimolante scambio di idee',
