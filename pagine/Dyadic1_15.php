@@ -1,5 +1,7 @@
 <?php
-session_start(); /*
+session_start();
+
+/*
 $volta='b1p4ss';
 if ($_SESSION['bypass']==!$volta) {
     header("location: /MBSR/Login.php") ;

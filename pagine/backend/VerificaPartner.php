@@ -1,10 +1,11 @@
 <?php
+
+//Questo programma  carica 
 require 'backend/SicurezzaForm/SicurezzaForm.php';
 $partner=$_POST[nome];
 
 $cod_partner=$_POST[cod_utente];
-$utente=$_SESSION['nome'];
-$cod_utente=$_SESSION['codice'];
+
 test_input_nome($partner); //NB: La variabile partner pulita diventa $nome
 
 //bISOGNA INSEWRIRE LA PULIZIA PER IL CODICE DEL PARTNER
@@ -28,7 +29,7 @@ if ($result->num_rows > 0) {
             //PROGRAMMA PER IL DEBUG
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
-                header("location:/DyadicAdjustment/pagine/Questionario.php");
+                header("location:/DyadicAdjustment/pagine/Dyadic1_15.php");
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
@@ -43,7 +44,7 @@ if ($result->num_rows > 0) {
     }
     
 } else {
-    
+    echo "Error: " . $sql . "<br>" . $conn->error; var_dump($row);
     $err_partner='Il nome o codice errato';
 }
 

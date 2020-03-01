@@ -2,7 +2,7 @@
 session_start();
 
 if (!empty(htmlspecialchars($_POST['nome']))) {
-    require 'backend/VerificaPartner.php';
+    require 'backend/ControlloInserimento.php';
 }
 	?>
 
