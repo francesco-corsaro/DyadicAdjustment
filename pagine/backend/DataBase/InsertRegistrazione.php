@@ -19,13 +19,13 @@ if ($conn->query($sql) === TRUE) {
 }
 $conn->close();
 }
-function Insert_cod_date($tabel,$codice, $data) {
+function Insert_cod_date($tabel,$codice) {
     
     
     require 'ConnectDataBase.php';
     
-    $sql = "INSERT INTO $tabel (codice, data )
-        VALUES ( $codice, '$data' )";
+    $sql = "INSERT INTO $tabel (IdPartner)
+        VALUES ( $codice )";
     if ($conn->query($sql) === TRUE) {
         global $stato;
         $stato= " | Codice e data Caricati | ";

@@ -1,5 +1,8 @@
 <?php
-session_start(); /*
+session_start(); 
+$codice=$_SESSION['codice'];
+/*
+
 $volta='b1p4ss';
 if ($_SESSION['bypass']==!$volta) {
     header("location: /MBSR/Login.php") ;
@@ -32,10 +35,19 @@ if (array_key_exists("38",$_POST['ffmq'])) {
     header("location: /MBSR/PGWBI.php") ;
 }*/
 
-if (isset($_POST[ffmq])) {
-    header("location: Attesa.php") ;
+if (isset($_POST[qst])) {
+    $_SESSION['das29_32']=$_POST['qst'];
+    
+    var_dump($_SESSION['das']); echo '<br>';
+    var_dump($_SESSION['das16_22']);echo '<br>';
+    var_dump($_SESSION['das23_28']);echo '<br>';
+    var_dump($_SESSION['das29_32']);echo '<br>';
+    
+    require 'backend/DataBase/InsertRegistrazione.php';
+    Insert_cod_date('RispostePre',$codice);
+    //header("location: Attesa.php") ;
 }
-$ffmq=array(
+$qst=array(
 1=> 'Desidero disperatamente che la mia relazione riesca, e supererei qualsiasi ostacolo perché ciò accada.',
 2=> 'Desidero moltissimo che la mia relazione riesca, e farò tutto ciò che è in mio potere perché ciò accada.',
 3=> 'Desidero moltissimo che la mia relazione e riesca, e farò la mia giusta parte perché ciò accada',
@@ -65,13 +77,13 @@ relazione nelle ultime settimane. Clicchi sul "SI" o sul "NO"
             <p class="color"><b>29. Essere troppo stanchi per fare l'amore</b></p>
            <div class="consegna">
              <label class="contenitore" id="gen">
-             	<input  name="genere" id="gen" type="radio" value="1" required/>
+             	<input  name="qst['1']" id="gen" type="radio" value="1" required/>
              	<span class="buttondo" id="gen" ></span>
              	Si 
              </label>
              
              <label class="contenitore" id="gen2">	
-             	<input  name="genere"id="gen2" type="radio" value="2" required />
+             	<input  name="qst['1']"id="gen2" type="radio" value="2" required />
              	<span class="buttondo" id="gen2" ></span>
              	No
               </label>
@@ -80,13 +92,13 @@ relazione nelle ultime settimane. Clicchi sul "SI" o sul "NO"
             <p class="color"><b>30. Non mostrare amore</b></p>
             <div class="consegna">
              <label class="contenitore" id="gen">
-             	<input  name="genere" id="gen" type="radio" value="1" required/>
+             	<input  name="qst['2']" id="gen" type="radio" value="1" required/>
              	<span class="buttondo" id="gen" ></span>
              	Si 
              </label>
              
              <label class="contenitore" id="gen2">	
-             	<input  name="genere"id="gen2" type="radio" value="2" required />
+             	<input  name="qst['2']"id="gen2" type="radio" value="2" required />
              	<span class="buttondo" id="gen2" ></span>
              	No
               </label>
@@ -105,7 +117,7 @@ relazione nelle ultime settimane. Clicchi sul "SI" o sul "NO"
            <p class="color"><b>5= Estremamente felice </b></p> 
            <p class="color"><b>6= Perfetta</b></p>
            
-           <input name="cod_utente"  type="number"  placeholder="N°" max="5"  <?php  echo $controllo?> >
+           <input name="qst['3']"  type="number"  placeholder="N°" max="5"  <?php  echo $controllo?> >
           </div>
           <div class="col-12">
           <div class="adesivo attak">
@@ -115,15 +127,15 @@ relazione nelle ultime settimane. Clicchi sul "SI" o sul "NO"
 			<div class="col-12 tenda" id="tendaFin">
 		<?php 
 
-$chiave='1';
- foreach ($ffmq as $chiave=>$testo){
+
+ foreach ($qst as $chiave=>$testo){
    
      echo  
         '
             
             <label class="contenitore" ">
                 <b class="color">'.$testo.'</b>
-                <input  name="ffmq[]" id="radiofin" type="radio" value="0" '.$controllo.' />
+                <input  name="qst[4]" id="radiofin" type="radio" value="0" '.$controllo.' />
                 <span class="buttondo"></span>
             </label>
                        

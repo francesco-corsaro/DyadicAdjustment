@@ -34,6 +34,11 @@ if (array_key_exists("38",$_POST['ffmq'])) {
     header("location: /MBSR/PGWBI.php") ;
 }*/
 if (isset($_POST[ffmq])) {
+    
+    $_SESSION['das']=$_POST[ffmq];
+   
+
+    
     header("location: Dyadic16_22.php") ;
 }
 

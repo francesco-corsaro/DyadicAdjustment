@@ -17,8 +17,7 @@ if ($result->num_rows > 0) {
             
             
             
-            $_SESSION['wor']=$row['IdPartner1'];
-            $_SESSION['wor1']=$row['IdPartner2'];
+            
             $conn->close();
             header("location:/DyadicAdjustment/pagine/Dyadic1_15.php");
             

@@ -32,6 +32,10 @@ if (array_key_exists("38",$_POST['ffmq'])) {
     header("location: /MBSR/PGWBI.php") ;
 }*/
 if (isset($_POST[ffmq])) {
+    $_SESSION['das23_28']=array();
+    array_push( $_SESSION['das23_28'], $_POST['qst']);
+    array_push( $_SESSION['das23_28'],$_POST['ffmq']);
+    var_dump($_SESSION['das23_28']);
     header("location: Dyadic29_32.php") ;
 }
 
@@ -63,27 +67,27 @@ $ffmq=array(
             <p class="color"><b>23. Indichi con quale frequenza bacia il suo/a compagno/a.</b></p>
             <label class="contenitore" ">
                 Ogni giorno
-                <input  name="ffmq['.$chiave.']" type="radio" value="4" <?php  echo$controllo?> />
+                <input  name="qst['1']" type="radio" value="4" <?php  echo$controllo?> />
                 <span class="buttondo"></span>
             </label>
             <label class="contenitore" >
                 Quasi ogni giorno
-                <input  name="ffmq['.$chiave.']" type="radio" value="3" <?php  echo$controllo?>/>
+                <input  name="qst['1']" type="radio" value="3" <?php  echo$controllo?>/>
                 <span class="buttondo"></span>
             </label>
             <label class="contenitore" >
                Occasionalmente
-                <input name="ffmq['.$chiave.']" type="radio" value="2" <?php  echo$controllo?>/>
+                <input name="qst['1']" type="radio" value="2" <?php  echo$controllo?>/>
                 <span class="buttondo"></span>
             </label>
             <label class="contenitore" >
                Raramente
-                <input  name="ffmq['.$chiave.']" type="radio" value="1" <?php  echo$controllo?>/>
+                <input  name="qst['1']" type="radio" value="1" <?php  echo$controllo?>/>
                 <span class="buttondo"></span>
             </label>
             <label class="contenitore col-12" >
                 Mai
-                <input  name="ffmq['.$chiave.']" type="radio" value="0" <?php  echo$controllo?>/>
+                <input  name="qst['1']" type="radio" value="0" <?php  echo$controllo?>/>
                 <span class="buttondo"></span>
             </label>
             
@@ -93,27 +97,27 @@ $ffmq=array(
            <p class="color"><b>24. Indichi in che misura lei ed il suo/a compagno/a condividete degli interessi fuori dalle mura domestiche.</b></p>
             <label class="contenitore col-12" ">
                 Tutti
-                <input  name="ffmq['.$chiave.']" type="radio" value="4" <?php  echo$controllo?> />
+                <input  name="qst['2']" type="radio" value="4" <?php  echo$controllo?> />
                 <span class="buttondo"></span>
             </label>
             <label class="contenitore" >
                 La maggior parte
-                <input  name="ffmq['.$chiave.']" type="radio" value="3" <?php  echo$controllo?>/>
+                <input  name="qst['2']" type="radio" value="3" <?php  echo$controllo?>/>
                 <span class="buttondo"></span>
             </label>
             <label class="contenitore col-12 " >
                Alcuni
-                <input name="ffmq['.$chiave.']" type="radio" value="2" <?php  echo$controllo?>/>
+                <input name="qst['2']" type="radio" value="2" <?php  echo$controllo?>/>
                 <span class="buttondo"></span>
             </label>
             <label class="contenitore" >
              Molto pochi
-                <input  name="ffmq['.$chiave.']" type="radio" value="1" <?php  echo$controllo?>/>
+                <input  name="qst['2']" type="radio" value="1" <?php  echo$controllo?>/>
                 <span class="buttondo"></span>
             </label>
             <label class="contenitore col-12" >
                Nessuno
-                <input  name="ffmq['.$chiave.']" type="radio" value="0" <?php  echo$controllo?>/>
+                <input  name="qst['2']" type="radio" value="0" <?php  echo$controllo?>/>
                 <span class="buttondo"></span>
             </label>
             
