@@ -5,7 +5,7 @@
 
 require 'ConnectDataBase.php'; //serve a connettersi al database
 
-$sql = "SELECT IdPartner1, IdPartner2 FROM Coppie";
+$sql = "SELECT IdPartner1, IdPartner2, IdCoppia FROM Coppie";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
         if ($row['IdPartner1'] == $_SESSION['codice'] or $row['IdPartner2'] == $_SESSION['codice']){
             
             
-            
+            $_SESSION['idcoppia']=$row['IdCoppia'];
             $coppia=1;
             echo $row['IdPartner2'];
             $conn->close();
@@ -54,7 +54,7 @@ if ($result->num_rows > 0) {
             header("location: /DyadicAdjustment/pagine/Attesa.php");
             
         }else {
-            header("location:/DyadicAdjustment/pagine/Questionario.php");
+            header("location:/DyadicAdjustment/pagine/Dyadic1_15.php");
         }
     }
     

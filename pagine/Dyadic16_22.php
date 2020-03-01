@@ -37,9 +37,10 @@ if (isset($_POST[cod_utente])) {
     //array_push($_SESSION['das16_22'],$_POST[cod_utente]);
     header("location: Dyadic23_28.php") ;
 }
+/*
 var_dump( $_SESSION['das16_22']);
 echo '<br>';
-var_dump( $_SESSION['das']);
+var_dump( $_SESSION['das']);*/
 $das16_22=array(
 1=> '16. Quanto spesso lei parla o ha preso in considerazione il divorzio, la separazione o il porre fine alla sua relazione?',
 2=> '17. Quanto spesso lei o il suo compagno/ a ve ne andate di casa dopo un litigio?',

@@ -7,11 +7,7 @@ $volta='b1p4ss';
 if ($_SESSION['bypass']==!$volta) {
     header("location: /MBSR/Login.php") ;
 }
-//prendo la variabile Nome
-if (!preg_match("/^[a-zA-Z0-9 ]*$/",$_SESSION['Name'])) {
-    $_SESSION['nameErr'] = '<div class="col-12 errore">Sono consentiti solo lettere e numeri</div>';
-    header("location: /MBSR/Login.php");
-}
+
 
 //Creo dei permessi per bypassare il reuired
 if ($_SESSION['name']!= 'kalimero') {
@@ -38,14 +34,40 @@ if (array_key_exists("38",$_POST['ffmq'])) {
 if (isset($_POST[qst])) {
     $_SESSION['das29_32']=$_POST['qst'];
     
-    var_dump($_SESSION['das']); echo '<br>';
+   /* var_dump($_SESSION['das']); echo '<br>';
     var_dump($_SESSION['das16_22']);echo '<br>';
     var_dump($_SESSION['das23_28']);echo '<br>';
-    var_dump($_SESSION['das29_32']);echo '<br>';
+    var_dump($_SESSION['das29_32']);echo '<br>';*/
+    $risposte=array();
+    foreach ($_SESSION['das'] as $key => $value) {
+        array_push($risposte,$value) ;
+    }
+    foreach ($_SESSION['das16_22'] as $key => $value) {
+        array_push($risposte,$value) ;
+    }
+    foreach ($_SESSION['das23_28'] as $key => $value) {
+        foreach ($_SESSION['das23_28'][$key] as $key1 => $value1) {
+            array_push($risposte,$value1)  ;
+        };
+    }
+    foreach ($_SESSION['das29_32'] as $key => $value) {
+        array_push($risposte,$value);
+    }
+    $colonna=array('Q1i1','Q1i2','Q1i3','Q1i4','Q1i5','Q1i6','Q1i7','Q1i8','Q1i9','Q1i10','Q1i11','Q1i12','Q1i13','Q1i14','Q1i15','Q1i16','Q1i17','Q1i18','Q1i19','Q1i20','Q1i21','Q1i22','Q1i23','Q1i24','Q1i25','Q1i26','Q1i27','Q1i28','Q1i29','Q1i30','Q1i31','Q1i32');
     
+    
+    $idCoppia=$_SESSION['idcoppia'];
+    //Inserisco il codice nella tabella
     require 'backend/DataBase/InsertRegistrazione.php';
-    Insert_cod_date('RispostePre',$codice);
-    //header("location: Attesa.php") ;
+    Insert_cod_date('RispostePre',$codice,$idCoppia);
+    //Inserisco le risposte
+    require 'backend/DataBase/AggiornaDataBase.php';
+    Carica_risp($colonna, $risposte, 'RispostePre','IdPartner', $codice,'IdCoppia',$idCoppia);
+    header("location: Attesa.php") ;
+    echo $stato.'<br>Risposte: ';
+    print_r($risposte);
+    echo $stato1;
+    //header("location: Attesa.php") ;*/
 }
 $qst=array(
 1=> 'Desidero disperatamente che la mia relazione riesca, e supererei qualsiasi ostacolo perché ciò accada.',

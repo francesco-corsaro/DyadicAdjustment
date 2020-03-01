@@ -21,6 +21,7 @@ function Carica_testi($colonna, $risp, $tabella,$dove, $posizione,$dove2,$posizi
 }
 
 function Carica_risp($colonna, $risp, $tabella,$dove, $posizione,$dove2,$posizione2){
+    //le variabili $risp e $colonna sono degli array contententi la colonna e l'item
     require 'ConnectDataBase.php';
     $flag=0;
     foreach ($risp as $risposta){
