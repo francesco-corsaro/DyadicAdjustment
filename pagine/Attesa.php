@@ -9,7 +9,7 @@ session_start();
 </head>
 
     <body>
-    <p>In questa pagina compare un messaggio di attesa</p>
+    <p>In questa pagina compare un messaggio di attendere l'apertura del post test e un bottone per uscire</p>
     <?php
 
 	?>

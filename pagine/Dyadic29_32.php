@@ -32,6 +32,25 @@ if (array_key_exists("38",$_POST['ffmq'])) {
 }*/
 
 if (isset($_POST[qst])) {
+    require 'backend/DataBase/ConnectDataBase.php';
+    
+    $sql = "SELECT IdPartner FROM RispostePre WHERE IdPartner='$codice' ";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+        
+        while(   $row = $result->fetch_assoc()) {
+            if ($row['IdPartner']==$_SESSION['codice']  ){
+                 header("location: /DyadicAdjustment/pagine/Attesa.php");
+                
+            }
+        }
+    }else {
+        
+    
+  
+      
+    
     $_SESSION['das29_32']=$_POST['qst'];
     
    /* var_dump($_SESSION['das']); echo '<br>';
@@ -63,11 +82,14 @@ if (isset($_POST[qst])) {
     //Inserisco le risposte
     require 'backend/DataBase/AggiornaDataBase.php';
     Carica_risp($colonna, $risposte, 'RispostePre','IdPartner', $codice,'IdCoppia',$idCoppia);
-    header("location: Attesa.php") ;
+   header("location: Attesa.php") ;
     echo $stato.'<br>Risposte: ';
     print_r($risposte);
     echo $stato1;
-    //header("location: Attesa.php") ;*/
+    /*header("location: Attesa.php") ;*/
+    echo "Error updating record: " . $conn->error.'<br>';
+
+}
 }
 $qst=array(
 1=> 'Desidero disperatamente che la mia relazione riesca, e supererei qualsiasi ostacolo perché ciò accada.',
